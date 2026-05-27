@@ -1,0 +1,22 @@
+diff --git a/node_modules/react-native/ReactCommon/reactperflogger/fusebox/FuseboxTracer.cpp b/node_modules/react-native/ReactCommon/reactperflogger/fusebox/FuseboxTracer.cpp
+index 3d52288..98e4c12 100644
+--- a/node_modules/react-native/ReactCommon/reactperflogger/fusebox/FuseboxTracer.cpp
++++ b/node_modules/react-native/ReactCommon/reactperflogger/fusebox/FuseboxTracer.cpp
+@@ -70,7 +70,7 @@ bool FuseboxTracer::stopTracing(
+ 
+   for (auto& event : savedBuffer) {
+     // For events with a custom track name, register track
+-    if (event.track.length() && !trackIdMap.contains(event.track)) {
++    if (event.track.length() && trackIdMap.find(event.track) == trackIdMap.end()) {
+       auto trackId = nextTrack++;
+       trackIdMap[event.track] = trackId;
+       traceEvents.push_back(folly::dynamic::object(
+@@ -80,7 +80,7 @@ bool FuseboxTracer::stopTracing(
+     }
+ 
+     auto trackId =
+-        trackIdMap.contains(event.track) ? trackIdMap[event.track] : 1000;
++        (trackIdMap.find(event.track) != trackIdMap.end()) ? trackIdMap[event.track] : 1000;
+ 
+     // Emit "blink.user_timing" trace event
+     traceEvents.push_back(folly::dynamic::object(

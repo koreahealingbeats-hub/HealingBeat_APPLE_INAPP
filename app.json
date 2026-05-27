@@ -1,0 +1,83 @@
+{
+  "expo": {
+    "name": "HealingBeat",
+    "slug": "HealingBeat",
+    "scheme": "healingbeat",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": false,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.healingbeat.app",
+      "appleTeamId": "A1B2C3D4E5",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio",
+          "fetch"
+        ],
+        "NSHealthShareUsageDescription": "Read heart rate and sleep data for stress analysis.",
+        "NSHealthUpdateUsageDescription": "Update health data.",
+        "NSMicrophoneUsageDescription": "$(PRODUCT_NAME) needs access to your Microphone.",
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera for AI face analysis.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.healingbeat.app",
+      "permissions": [
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.VIBRATE",
+        "android.permission.CAMERA",
+        "android.permission.health.READ_HEART_RATE",
+        "android.permission.health.READ_SLEEP",
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_TOTAL_CALORIES_BURNED"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.0"
+          },
+          "android": {
+            "kotlinVersion": "2.0.20",
+            "minSdkVersion": 26,
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0"
+          }
+        }
+      ],
+      "react-native-health",
+      "react-native-health-connect",
+      "./plugins/withHealthConnectActivity",
+      "./plugins/withHealthConnectManifest",
+      "./plugins/withWatchApp",
+      "./plugins/withTrackPlayerManifest",
+      "./plugins/withFmtFix"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e331dd31-b6fe-4489-b6c0-37da2142ea69"
+      }
+    }
+  }
+}
