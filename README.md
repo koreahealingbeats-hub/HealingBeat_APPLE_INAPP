@@ -50,6 +50,7 @@
 
 ## 2. 폴더 구조
 
+```filepath
 HealingBeat_APPLE_INAPP/
 ├── android/                   # 안드로이드 네이티브 프로젝트 폴더
 ├── ios/                       # iOS 네이티브 프로젝트 폴더
@@ -96,6 +97,7 @@ HealingBeat_APPLE_INAPP/
         │   ├── context/       # 스크롤 최적화 처리용 리액트 Context 모음
         │   └── health/        # HealthKit 및 Health Connect 연동 구체 스크립트
         └── ui/                # Toast 디자인 구성 등 전역 UI 빌더
+```
 
 ## 3. 주요 기능 및 구현 상세
 
