@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions, ActivityIndicator, Image, Animated } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions, ActivityIndicator, Image, Animated, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { SubHeader } from '@/shared/ui';
@@ -80,6 +80,7 @@ export const AiCameraScreen = () => {
                 resizeWidth={152}
                 resizeHeight={200}
                 resizeDepth={3}
+                rotation={Platform.OS === 'ios' ? 270 : 90}
             >
                 <View style={styles.fullOverlay}>
                     <SafeAreaView style={styles.overlayInner}>

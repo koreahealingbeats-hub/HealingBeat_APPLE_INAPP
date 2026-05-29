@@ -160,57 +160,25 @@ HealingBeat_APPLE_INAPP/
   * 모바일 앱에서 HealthKit 심박수를 수집하기 위해 워크아웃 세션으로 워치 앱을 자동 강제 구동시키는 Swift 기반의 `WatchLauncherModule.swift`를 보존
   * `plugins/withWatchApp` 커스텀 빌드 플러그인이 프리빌드 시점에 이 백업 폴더를 자동으로 읽어 들여 Xcode 프로젝트 파일 내부에 Watch App Target을 생성하고 필요한 Swift 파일과 프레임워크 권한을 동적으로 결합 및 컴파일
 
-### 초기 환경 세팅 및 의존성 패키지 설치
+## 4. 빌드 및 개발 환경 설정
 
-1. EAS CLI 전역 설치 (선택 사항)
-   * Expo 앱의 클라우드 빌드 및 제출용 도구인 EAS CLI를 사전에 전역 설치해 두는 것을 권장합니다.
-   * 터미널에 아래 명령어를 입력합니다.
-     ```bash
-     npm install -g eas-cli
-     ```
+### 4.1 개발 환경 구성
+* Expo Dev Client 설치 필수
+* Xcode 및 Android Studio 설정 필요
 
-2. 의존성 패키지 설치
-   * 프로젝트 최상위 폴더 경로에서 로컬 패키지를 설치합니다.
-     ```bash
-     npm install
-     ```
+1. 의존성 패키지 설치 (호환성 문제로 인해 legacy-peer-deps 옵션 추가 필요)
+   `npm install --legacy-peer-deps`
 
-3. iOS 환경용 CocoaPods 설치 (macOS 한정 필수)
-   * iOS 빌드를 하기 전 네이티브 라이브러리 코드를 동기화하기 위해 pod 패키지들을 다운로드합니다.
-     ```bash
-     npx expo install --fix
-     # 또는 ios 디렉토리 진입 후 실행
-     cd ios && pod install && cd ..
-     ```
+2. 네이티브 빌드 리소스 클리닝 및 프리빌드
+   `npx expo prebuild --clean`
 
-### 에뮬레이터 및 시뮬레이터 테스트 실행
+### 4.2 프로젝트 실행 명령어
 
-로컬 환경에 가상 기기가 세팅 완료되었다면, 아래 명령어를 통해 각 에뮬레이터에 앱 빌드를 진행하고 개발 서버를 시작합니다. 첫 빌드 시에는 다소 시간이 소요될 수 있습니다.
-
-* Android 에뮬레이터 실행 (안드로이드 기기 가상 환경 빌드 및 주입)
-  ```bash
-  npm run android
-  ```
-  또는 명시적으로 아래 명령어를 활용해 로컬 에뮬레이터를 감지하고 빌드를 실행합니다.
-  ```bash
-  npx expo run:android
-  ```
-
-* iOS 시뮬레이터 실행 (macOS 전용 Apple 기기 가상 환경 빌드 및 주입)
-  ```bash
-  npm run ios
-  ```
-  또는 명시적으로 아래 명령어를 실행하여 시뮬레이터에 앱을 빌드 및 구동합니다.
-  ```bash
-  npx expo run:ios
-  ```
-
-* Web 환경 및 로컬 번들러 실행 (단순 번들링 서버 구동)
-  단순 모듈 동작 확인 및 로컬 Metro 번들러 서버를 독립적으로 열고 싶은 경우에는 아래 명령어를 사용합니다.
-  ```bash
-  npx expo start
-  ```
-  웹 브라우저 상에서 확인하고 싶은 경우:
-  ```bash
-  npm run web
-  ```
+* iOS 시뮬레이터로 빌드 및 실행:
+  `npx expo run:ios`
+* iOS 실물 디바이스로 빌드 및 실행:
+  `npx expo run:ios -d` 
+* Android 에뮬레이터/디바이스로 빌드 및 실행:
+  `npx expo run:android`
+* Android 실물 디바이스로 빌드 및 실행:
+  `npx expo run:android -d`

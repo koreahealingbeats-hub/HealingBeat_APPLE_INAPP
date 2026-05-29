@@ -77,8 +77,11 @@ export const useAIAnalyzer = () => {
                         Math.pow(faceCenterY - ROI_CENTER_Y, 2)
                     );
 
-                    // Allow some tolerance (90% of radius)
-                    setIsWithinROI(dist < ROI_RADIUS * 0.9);
+                    // Allow a very generous tolerance (150% of radius)
+                    const withinROI = dist < ROI_RADIUS * 1.5;
+                    setIsWithinROI(withinROI);
+
+                    console.log(`[AI] Face detected! Tensor shape: ${tensorWidth}x${tensorHeight}, Center: (${faceCenterX.toFixed(1)}, ${faceCenterY.toFixed(1)}), Dist from ROI center: ${dist.toFixed(1)}, withinROI: ${withinROI}`);
                 } else {
                     setFaceDetected(false);
                     setIsWithinROI(false);

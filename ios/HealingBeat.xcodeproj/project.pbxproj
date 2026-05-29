@@ -20,7 +20,7 @@
 		13B07F961A680F5B00A75B9A /* HealingBeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealingBeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HealingBeat/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = HealingBeat/Info.plist; sourceTree = "<group>"; };
-		4F6F7BF95A5675937A6998A5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = HealingBeat/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4F6F7BF95A5675937A6998A5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = HealingBeat/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5276B4BEE5AC06D329CE2A57 /* libPods-HealingBeat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HealingBeat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = HealingBeat/SplashScreen.storyboard; sourceTree = "<group>"; };
 		B51AA6E1A9E6842083F9A3DF /* Pods-HealingBeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealingBeat.release.xcconfig"; path = "Target Support Files/Pods-HealingBeat/Pods-HealingBeat.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 				C983ABF6DABEC4A6765B2F3D /* Pods-HealingBeat.debug.xcconfig */,
 				B51AA6E1A9E6842083F9A3DF /* Pods-HealingBeat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -357,7 +356,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HealingBeat/HealingBeat.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A1B2C3D4E5;
+				DEVELOPMENT_TEAM = WXYF6Y7YG6;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -394,7 +393,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HealingBeat/HealingBeat.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A1B2C3D4E5;
+				DEVELOPMENT_TEAM = WXYF6Y7YG6;
 				INFOPLIST_FILE = HealingBeat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
